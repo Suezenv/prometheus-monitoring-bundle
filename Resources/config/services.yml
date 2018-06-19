@@ -1,0 +1,15 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Suez\Bundle\PrometheusMonitoringBundle\:
+        resource: '../../*'
+        exclude: '../../{Entity,Migrations,Tests,SuezPrometheusMonitoringBundle.php}'
+
+    Suez\Bundle\PrometheusMonitoringBundle\Monitoring\CollectorRegistry:
+        arguments:
+            $appCode: "%suez_prometheus_monitoring.app_code%"
