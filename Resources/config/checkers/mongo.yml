@@ -1,0 +1,10 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Checker\HealthChecker\MongoChecker:
+            tags: ['suez.prometheus_monitoring_checker']

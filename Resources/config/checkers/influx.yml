@@ -1,0 +1,10 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Checker\HealthChecker\InfluxChecker:
+        tags: ['suez.prometheus_monitoring_checker']

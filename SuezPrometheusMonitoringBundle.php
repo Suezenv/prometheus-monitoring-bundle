@@ -2,6 +2,8 @@
 
 namespace Suez\Bundle\PrometheusMonitoringBundle;
 
+use Suez\Bundle\PrometheusMonitoringBundle\DependencyInjection\Compiler\CheckerCollectorPass;
+use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Checker\HealthCheckInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Collector\AbstractCollector;
@@ -20,5 +22,12 @@ class SuezPrometheusMonitoringBundle extends Bundle
         ;
 
         $container->addCompilerPass(new MonitoringCollectorPass());
+
+        $container
+            ->registerForAutoconfiguration(HealthCheckInterface::class)
+            ->addTag('suez.prometheus_monitoring_checker')
+        ;
+
+        $container->addCompilerPass(new CheckerCollectorPass());
     }
 }
