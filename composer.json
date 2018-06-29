@@ -12,13 +12,12 @@
     "symfony/config": "~3.4|~4.0",
     "symfony/dependency-injection": "~3.4|~4.0",
     "symfony/http-kernel": "~3.4|~4.0",
-    "tweedegolf/prometheus-bundle": "dev-symfony4-support"
+    "tweedegolf/prometheus-bundle": "0.2.3"
   },
   "repositories": [
     {
       "type": "vcs",
       "url": "https://github.com/Suezenv/prometheus-bundle"
     }
-  ],
-  "minimum-stability": "dev"
+  ]
 }
