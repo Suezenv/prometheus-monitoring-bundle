@@ -1,11 +1,11 @@
 <?php
 
-namespace Suez\Bundle\PrometheusMonitoringBundle\Monitoring;
+namespace Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Metric;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use TweedeGolf\PrometheusClient\CollectorRegistry as PrometheusCollectorRegistry;
-use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Collector\AbstractCollector;
+use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Metric\Collector\AbstractCollector;
 
 /**
  * Class CollectorRegistry

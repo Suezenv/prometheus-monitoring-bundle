@@ -2,37 +2,37 @@
 
 namespace Suez\Bundle\PrometheusMonitoringBundle\DependencyInjection\Compiler;
 
-use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Metric\CollectorRegistry;
+use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck\HealthCheckerRegistry;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Reference;
 
 /**
- * Class MonitoringCollectorPass
+ * Class CheckerCollectorPass
  *
- * Container compiler pass to load collectors into the registry service
+ * Container compiler pass to load checkers into the registry service
  *
  * @package Suez\Bundle\PrometheusMonitoringBundle\DependencyInjection\Compiler
  */
-class MonitoringCollectorPass implements CompilerPassInterface
+class CheckerCollectorPass implements CompilerPassInterface
 {
     /**
      * {@inheritdoc}
      */
     public function process(ContainerBuilder $container)
     {
-        if (!$container->has(CollectorRegistry::class)) {
+        if (!$container->has(HealthCheckerRegistry::class)) {
             return;
         }
 
-        $definition = $container->findDefinition(CollectorRegistry::class);
+        $definition = $container->findDefinition(HealthCheckerRegistry::class);
 
         $taggedServices = $container
-            ->findTaggedServiceIds('suez.prometheus_monitoring_collector')
+            ->findTaggedServiceIds('suez.prometheus_monitoring_checker')
         ;
 
         foreach ($taggedServices as $id => $tags) {
-            $definition->addMethodCall('addCollector', array(new Reference($id)));
+            $definition->addMethodCall('addChecker', array(new Reference($id)));
         }
     }
 }

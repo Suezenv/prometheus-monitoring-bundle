@@ -1,0 +1,3 @@
+suez_prometheus_monitoring_health:
+    path:     "%suez_prometheus_bundle.health_path%"
+    defaults: { _controller: Suez\Bundle\PrometheusMonitoringBundle\Controller\HealthController::check }

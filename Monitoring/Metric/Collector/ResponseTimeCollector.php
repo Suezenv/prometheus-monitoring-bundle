@@ -1,6 +1,6 @@
 <?php
 
-namespace Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Collector;
+namespace Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Metric\Collector;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
