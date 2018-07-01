@@ -2,7 +2,7 @@
 
 namespace Suez\Bundle\PrometheusMonitoringBundle\DependencyInjection\Compiler;
 
-use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheckerRegistry;
+use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck\HealthCheckerRegistry;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Reference;

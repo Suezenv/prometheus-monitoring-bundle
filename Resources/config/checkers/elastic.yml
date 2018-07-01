@@ -1,4 +1,7 @@
 parameters:
+    elastic_host: null
+    elastic_port: 9200
+    elastic_index: null
 
 services:
     _defaults:
@@ -6,5 +9,8 @@ services:
         autoconfigure: true
         public: false
 
-    Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Checker\HealthChecker\ElasticChecker:
+    Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck\Checker\ElasticChecker:
+        calls:
+            - [setIndex, ['@?fos_elastica.index']]
+            - [setConnectionSettings, ['%elastic_host%', '%elastic_port%', '%elastic_index%']]
         tags: ['suez.prometheus_monitoring_checker']

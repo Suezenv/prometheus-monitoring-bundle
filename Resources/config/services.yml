@@ -8,13 +8,16 @@ services:
 
     Suez\Bundle\PrometheusMonitoringBundle\:
         resource: '../../*'
-        exclude: '../../{Entity,Controller,Migrations,Tests,SuezPrometheusMonitoringBundle.php}'
+        exclude: '../../{Entity,Controller,Monitoring,Migrations,Tests,SuezPrometheusMonitoringBundle.php}'
 
-    Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Checker\:
-        resource: '../../Monitoring/Checker'
-        exclude: '../../Monitoring/Checker/HealthChecker'
+    Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck\:
+        resource: '../../Monitoring/HealthCheck/*'
+        exclude: '../../Monitoring/HealthCheck/Checker/*'
 
-    Suez\Bundle\PrometheusMonitoringBundle\Monitoring\CollectorRegistry:
+    Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Metric\:
+        resource:  '../../Monitoring/Metric/*'
+
+    Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Metric\CollectorRegistry:
         arguments:
             $appCode: "%suez_prometheus_monitoring.app_code%"
 

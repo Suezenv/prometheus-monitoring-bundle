@@ -1,11 +1,11 @@
 <?php
 
-namespace Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Checker;
+namespace Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck;
 
 /**
  * Class CheckerResult
  *
- * @package Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Checker
+ * @package Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck
  */
 class CheckerResult
 {

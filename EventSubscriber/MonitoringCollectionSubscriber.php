@@ -7,7 +7,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\Event\PostResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\CollectorRegistry;
+use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Metric\CollectorRegistry;
 use TweedeGolf\PrometheusClient\PrometheusException;
 
 /**

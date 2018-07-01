@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Config\FileLocator;
-use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheckerRegistry;
+use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck\HealthCheckerRegistry;
 
 /**
  * SuezPrometheusMonitoringExtension
@@ -79,7 +79,7 @@ class SuezPrometheusMonitoringExtension extends ConfigurableExtension implements
             'suez_sf_app_response_code' => [
                 'counter' => [
                     'labels' => ['app', 'route', 'status_code'],
-                    'help' => 'number of call to the API per response status'
+                    'help' => 'number of call to the API per response code'
                 ]
             ],
             'suez_sf_app_memory_usage' => [
@@ -99,7 +99,7 @@ class SuezPrometheusMonitoringExtension extends ConfigurableExtension implements
             'suez_sf_app_response_size' => [
                 'gauge' => [
                     'labels' => ['app', 'route'],
-                    'help' => 'Request execution time in seconds',
+                    'help' => 'Response size in bytes',
                     'initializer' => 0
                 ]
             ],

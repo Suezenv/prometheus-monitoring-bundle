@@ -1,4 +1,7 @@
 parameters:
+    influxdb_host: null
+    influxdb_port: 8086
+    influxdb_db: null
 
 services:
     _defaults:
@@ -6,5 +9,9 @@ services:
         autoconfigure: true
         public: false
 
-    Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Checker\HealthChecker\InfluxChecker:
+    Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck\Checker\InfluxChecker:
+        calls:
+            - [setDatabase, ['@?influxdb_database']]
+            - [setDatabase, ['@?algatux_influx_db.connection.http']]
+            - [setConnectionSettings, ['%influxdb_host%', '%influxdb_port%', '%influxdb_db%']]
         tags: ['suez.prometheus_monitoring_checker']

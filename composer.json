@@ -19,5 +19,12 @@
       "type": "vcs",
       "url": "https://github.com/Suezenv/prometheus-bundle"
     }
-  ]
+  ],
+  "suggest": {
+    "influxdb/influxdb-php": "To check if your connection to an Influx database is up in the health route",
+    "algatux/influxdb-bundle": "another way to connect to Influx with a bundle that configures influxdb/influxdb-php",
+    "symfony/orm-pack": "To check if your connection to a SQL database is up in the health route",
+    "mongodb/mongodb": "To check if your connection to a Mongo database is up in the health route",
+    "ruflin/elastica": "To check if your connection to a Elasticsearch engine is up in the health route"
+  }
 }

@@ -2,7 +2,7 @@
 
 namespace Suez\Bundle\PrometheusMonitoringBundle\Controller;
 
-use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheckerRegistry;
+use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck\HealthCheckerRegistry;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**

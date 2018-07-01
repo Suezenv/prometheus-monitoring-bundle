@@ -1,9 +1,11 @@
 <?php
 
-namespace Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Checker;
+namespace Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck;
 
 /**
  * Interface HealthCheckInterface
+ *
+ * @package Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck
  */
 interface HealthCheckInterface
 {

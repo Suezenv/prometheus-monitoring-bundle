@@ -1,4 +1,7 @@
 parameters:
+    mongo_host: null
+    mongo_port: 27017
+    mongo_db: null
 
 services:
     _defaults:
@@ -6,5 +9,8 @@ services:
         autoconfigure: true
         public: false
 
-    Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Checker\HealthChecker\MongoChecker:
-            tags: ['suez.prometheus_monitoring_checker']
+    Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck\Checker\MongoChecker:
+        calls:
+            - [setDatabase, ['@?mongo_database']]
+            - [setConnectionSettings, ['%mongo_host%', '%mongo_port%', '%mongo_db%']]
+        tags: ['suez.prometheus_monitoring_checker']

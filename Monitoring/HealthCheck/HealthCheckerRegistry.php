@@ -1,14 +1,11 @@
 <?php
 
-namespace Suez\Bundle\PrometheusMonitoringBundle\Monitoring;
-
-use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Checker\HealthCheckInterface;
-use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Checker\CheckerResult;
+namespace Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck;
 
 /**
  * Class HealthCheckerRegistry
  *
- * @package Suez\Bundle\PrometheusMonitoringBundle\Monitoring
+ * @package Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck
  */
 class HealthCheckerRegistry
 {

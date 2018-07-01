@@ -3,10 +3,10 @@
 namespace Suez\Bundle\PrometheusMonitoringBundle;
 
 use Suez\Bundle\PrometheusMonitoringBundle\DependencyInjection\Compiler\CheckerCollectorPass;
-use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Checker\HealthCheckInterface;
+use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\HealthCheck\HealthCheckInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Collector\AbstractCollector;
+use Suez\Bundle\PrometheusMonitoringBundle\Monitoring\Metric\Collector\AbstractCollector;
 use Suez\Bundle\PrometheusMonitoringBundle\DependencyInjection\Compiler\MonitoringCollectorPass;
 
 /**
