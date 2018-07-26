@@ -35,9 +35,13 @@ class ResponseTimeCollector extends AbstractCollector
      */
     public function collect(Request $request, Response $response)
     {
+        $startTime = null;
+
         if (null !== $this->kernel) {
             $startTime = $this->kernel->getStartTime();
-        } else {
+        }
+
+        if (is_null($startTime) || $startTime === -INF) {
             $startTime = $request->server->get('REQUEST_TIME_FLOAT');
         }
 
