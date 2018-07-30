@@ -1,5 +1,5 @@
 {
-  "name": "suez/prometheus-monitoring-bundle",
+  "name": "3slab/prometheus-monitoring-bundle",
   "type": "symfony-bundle",
   "autoload": {
     "psr-4": { "Suez\\Bundle\\PrometheusMonitoringBundle\\": "" },
@@ -12,14 +12,8 @@
     "symfony/config": "~3.4|~4.0",
     "symfony/dependency-injection": "~3.4|~4.0",
     "symfony/http-kernel": "~3.4|~4.0",
-    "tweedegolf/prometheus-bundle": "0.2.3"
+    "3slab/tweedegolf-prometheus-bundle": "0.2.3"
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/Suezenv/prometheus-bundle"
-    }
-  ],
   "suggest": {
     "influxdb/influxdb-php": "To check if your connection to an Influx database is up in the health route",
     "algatux/influxdb-bundle": "another way to connect to Influx with a bundle that configures influxdb/influxdb-php",
