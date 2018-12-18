@@ -88,6 +88,30 @@ class MongoChecker implements HealthCheckInterface
     }
 
     /**
+     * Set connection Uri
+     *
+     * @param string $uri
+     * @param string $dbName
+     */
+    public function setConnectionUri(string $uri = null, string $dbName = null)
+    {
+        if ($this->db !== null) {
+            return;
+        }
+
+        if ($uri === null) {
+            $this->logger->error('Health route : MongoDB connection URI %mongo_uri% is missing');
+            return;
+        }
+
+        try {
+            $this->setDatabase((new Client("$uri"))->{$dbName});
+        } catch (\Exception $e) {
+            $this->logger->error($e);
+        }
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getName(): string

@@ -2,6 +2,7 @@ parameters:
     mongo_host: null
     mongo_port: 27017
     mongo_db: null
+    mongo_uri: null
 
 services:
     _defaults:
@@ -13,4 +14,5 @@ services:
         calls:
             - [setDatabase, ['@?mongo_database']]
             - [setConnectionSettings, ['%mongo_host%', '%mongo_port%', '%mongo_db%']]
+            - [setConnectionUri, ['%mongo_uri%',  '%mongo_db%']]
         tags: ['suez.prometheus_monitoring_checker']
