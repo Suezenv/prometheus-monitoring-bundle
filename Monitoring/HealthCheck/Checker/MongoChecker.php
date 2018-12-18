@@ -100,7 +100,7 @@ class MongoChecker implements HealthCheckInterface
         }
 
         if ($uri === null) {
-            $this->logger->error('Health route : MongoDB connection settings %mongo_uri% is missing');
+            $this->logger->error('Health route : MongoDB connection URI %mongo_uri% is missing');
             return;
         }
 
