@@ -1,5 +1,10 @@
 # Suez Prometheus Monitoring Bundle
 
+**This bundle is no longer maintained. It has been replaced by :**
+
+* [VdmHealthcheckBundle](https://github.com/3slab/VdmHealthcheckBundle) for the healthcheck part
+* [VdmPrometheusBundle](https://github.com/3slab/VdmPrometheusBundle) for the metrics part
+
 ## Introduction
 
 This bundle provides 2 routes to monitor :
